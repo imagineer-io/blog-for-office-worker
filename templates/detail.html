@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">{{ article.title }}</h1>
+    <p class="lead blog-description">The first blog created by Imagineer</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="blog-post">
+        <p>{{ article.content }}</p>
+      </div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module">
+        <h4>Hashtags</h4>
+        <ol class="list-unstyled">
+          {% for hashtag in hashtag_list %}
+          <li>#{{ hashtag }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="sidebar-module"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
