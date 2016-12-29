@@ -21,14 +21,22 @@
     </div>
     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
       <div class="sidebar-module">
-        <h4>Hashtags</h4>
+        <h4>Categories</h4>
         <ol class="list-unstyled">
-          {% for hashtag in hashtag_list %}
-          <li>#{{ hashtag }}</li>
+          <li><a href="/">all</a></li>
+          {% for alias, category in category_list %}
+          <li><a href="/?category={{ alias }}">{{ category }}</a></li>
           {% endfor %}
         </ol>
       </div>
-      <div class="sidebar-module"></div>
+      <div class="sidebar-module">
+        <h4>Hashtags</h4>
+        <ol class="list-unstyled">
+          {% for hashtag in hashtag_list %}
+          <li><a href="/?hashtag={{ hashtag.name }}">#{{ hashtag }}</a></li>
+          {% endfor %}
+        </ol>
+      </div>
     </div>
   </div>
 </div>
