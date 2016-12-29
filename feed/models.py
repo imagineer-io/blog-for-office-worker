@@ -28,7 +28,11 @@ class Article(models.Model):
         return self.title
 
 class Comment(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    article = models.ForeignKey(
+        Article,
+        related_name="article_comments",
+        on_delete=models.CASCADE
+    )
     username = models.CharField(max_length=50)
     content = models.CharField(max_length=200)
 
